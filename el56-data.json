@@ -1,0 +1,238 @@
+{
+  "section": "EL5-EL6",
+  "title": "Properties of Logarithms & Solving Exponential/Logarithmic Equations",
+  "learningObjective": "EL5: Use properties of logarithms to condense or expand logarithmic expressions. EL6: Solve exponential and logarithmic equations.",
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "conceptual",
+      "question": "What is the one-to-one property of logarithms, and why does it work?",
+      "answer": "The one-to-one property says that if two logarithms with the SAME base are equal, then their arguments must be equal too: \\( \\log_b(M) = \\log_b(N) \\) if and only if \\( M = N \\). This works because a logarithmic function is one-to-one (FN6) — each output comes from exactly one input — so if two logs with the same base produce the same output, they had to start from the same input.<div class=\"example-box\"><div class=\"label\">Example</div><p class=\"math-line\">If \\( \\log_3(x) = \\log_3(7) \\), then \\( x=7 \\).</p></div>"
+    },
+    {
+      "id": "faq-2",
+      "category": "conceptual",
+      "question": "What is the product property of logarithms, and where does it come from?",
+      "answer": "The product property turns the logarithm of a product into a sum of two separate logarithms.<div class=\"example-box\"><div class=\"label\">Formula</div><p class=\"math-line\">\\[ \\log_a(m \\cdot n) = \\log_a(m) + \\log_a(n) \\]</p></div>This comes directly from the exponent rule \\( b^x \\cdot b^y = b^{x+y} \\) — since logarithms ARE exponents (EL3), multiplying two numbers corresponds to adding their exponents, which is exactly what this property captures."
+    },
+    {
+      "id": "faq-3",
+      "category": "conceptual",
+      "question": "What is the quotient property of logarithms?",
+      "answer": "The quotient property turns the logarithm of a fraction into a difference of two separate logarithms — the mirror image of the product property.<div class=\"example-box\"><div class=\"label\">Formula</div><p class=\"math-line\">\\[ \\log_a\\left(\\dfrac{m}{n}\\right) = \\log_a(m) - \\log_a(n) \\]</p></div>"
+    },
+    {
+      "id": "faq-4",
+      "category": "conceptual",
+      "question": "What is the power property of logarithms?",
+      "answer": "The power property lets you move an exponent from inside a logarithm's argument out in front, as a multiplier.<div class=\"example-box\"><div class=\"label\">Formula</div><p class=\"math-line\">\\[ \\log_a(m^n) = n \\cdot \\log_a(m) \\]</p></div>This is one of the most useful properties for solving equations, since it's the tool that lets you \"bring down\" an exponent you're trying to solve for."
+    },
+    {
+      "id": "faq-5",
+      "category": "conceptual",
+      "question": "What is the change of base formula, and when would I need it?",
+      "answer": "The change of base formula rewrites a logarithm with any base as a ratio of two logarithms in a DIFFERENT, more convenient base — usually base 10 or base e, since those are the only two bases most calculators have a dedicated button for.<div class=\"example-box\"><div class=\"label\">Formula</div><p class=\"math-line\">\\[ \\log_a(x) = \\dfrac{\\log_b(x)}{\\log_b(a)} \\]</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">(b can be any valid base — commonly 10 or e)</p></div>"
+    },
+    {
+      "id": "faq-6",
+      "category": "conceptual",
+      "question": "What does it mean to \"expand\" versus \"condense\" a logarithmic expression?",
+      "answer": "Expanding means breaking one logarithm containing a product, quotient, or exponent into several simpler logarithms added or subtracted together. Condensing means running that process backward — combining several separate logarithms into a single logarithm. They're opposite skills using the exact same three properties (product, quotient, power), just applied in opposite directions."
+    },
+    {
+      "id": "faq-7",
+      "category": "sticking-points",
+      "question": "How do I expand a logarithmic expression using the product, quotient, and power properties?",
+      "answer": "Work from the outside in: identify the overall structure first (is the whole thing a product, a quotient, or something raised to a power?), apply the matching property to split it into pieces, then repeat on any pieces that still have more than one factor.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Expand \\( \\log_2\\left(\\dfrac{x^3 y}{z}\\right) \\).</p><p class=\"math-line\">Quotient property: \\( \\log_2(x^3y) - \\log_2(z) \\)</p><p class=\"math-line\">Product property: \\( \\log_2(x^3) + \\log_2(y) - \\log_2(z) \\)</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">Power property: \\( 3\\log_2(x) + \\log_2(y) - \\log_2(z) \\)</p></div>"
+    },
+    {
+      "id": "faq-8",
+      "category": "sticking-points",
+      "question": "How do I condense multiple logarithms into a single logarithm?",
+      "answer": "Run the expanding process in reverse: handle any coefficients in front of a logarithm first by moving them back up as exponents (power property backward), then combine addition into a product and subtraction into a quotient.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Condense \\( 2\\log(x) + \\log(y) - \\log(z) \\).</p><p class=\"math-line\">Power property backward: \\( \\log(x^2) + \\log(y) - \\log(z) \\)</p><p class=\"math-line\">Product then quotient: \\( \\log\\left(\\dfrac{x^2y}{z}\\right) \\)</p></div>"
+    },
+    {
+      "id": "faq-9",
+      "category": "sticking-points",
+      "question": "How do I solve an exponential equation when both sides already have the same base?",
+      "answer": "Use the one-to-one property of exponentials: if the bases match, you can simply set the exponents equal to each other and solve — no logarithms needed at all.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Solve \\( 5^{3x} = 5^{7x-2} \\).</p><p class=\"math-line\">Same base, so set exponents equal: \\( 3x = 7x-2 \\)</p><p class=\"math-line\">Solve: \\( -4x=-2 \\) &rarr; \\( x=\\dfrac{1}{2} \\)</p></div>"
+    },
+    {
+      "id": "faq-10",
+      "category": "sticking-points",
+      "question": "How do I solve an exponential equation when the two sides have different bases?",
+      "answer": "First check whether you can rewrite both sides using a common base (like rewriting 4 as 2²) — if so, use the one-to-one property from faq-9. If the bases genuinely can't be matched, take the logarithm of both sides instead (faq-11)."
+    },
+    {
+      "id": "faq-11",
+      "category": "sticking-points",
+      "question": "How do I solve an exponential equation using the \"take the log of both sides\" method?",
+      "answer": "Take log (or ln) of both sides, use the power property to bring the exponent down as a multiplier, then solve the resulting equation algebraically for the variable.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Solve \\( 3^x = 7 \\).</p><p class=\"math-line\">Take log of both sides: \\( \\log(3^x) = \\log(7) \\)</p><p class=\"math-line\">Power property: \\( x\\log(3) = \\log(7) \\)</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">Solve: \\( x = \\dfrac{\\log(7)}{\\log(3)} \\approx 1.771 \\)</p></div>"
+    },
+    {
+      "id": "faq-12",
+      "category": "sticking-points",
+      "question": "How do I solve a logarithmic equation by condensing it into a single logarithm first?",
+      "answer": "Condense the equation into the form \\( \\log_b(\\text{something}) = \\text{a number} \\), then convert to exponential form (EL3) and solve algebraically.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Solve \\( \\log_2(x) + \\log_2(x-2) = 3 \\).</p><p class=\"math-line\">Condense: \\( \\log_2(x(x-2)) = 3 \\)</p><p class=\"math-line\">Convert to exponential form: \\( x(x-2) = 2^3 = 8 \\)</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">Solve the resulting quadratic: \\( x^2-2x-8=0 \\) &rarr; \\( x=4 \\) or \\( x=-2 \\)</p></div>"
+    },
+    {
+      "id": "faq-13",
+      "category": "sticking-points",
+      "question": "How do I check for extraneous solutions when solving a logarithmic equation?",
+      "answer": "Plug every candidate solution back into the ORIGINAL equation (before you condensed or converted anything) and confirm every logarithm's argument comes out positive. Since a logarithm's domain requires a positive argument (EL3), any solution that makes an argument zero or negative must be thrown out — even though it solved the condensed algebraic equation correctly.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">From faq-12: candidates \\( x=4 \\) and \\( x=-2 \\).</p><p class=\"math-line\">Check \\( x=-2 \\) in the original: \\( \\log_2(-2) \\) — argument is negative, undefined.</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">Reject \\( x=-2 \\). Only \\( x=4 \\) is a valid solution.</p></div>"
+    },
+    {
+      "id": "faq-14",
+      "category": "sticking-points",
+      "question": "How do I use the change of base formula to evaluate a logarithm on a calculator?",
+      "answer": "Rewrite the logarithm as a fraction of two common (or natural) logarithms using the change of base formula (faq-5), then evaluate each one on a calculator and divide.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Evaluate \\( \\log_5(30) \\).</p><p class=\"math-line\">Change of base: \\( \\dfrac{\\log(30)}{\\log(5)} \\)</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">\\( \\approx \\dfrac{1.477}{0.699} \\approx 2.113 \\)</p></div>"
+    },
+    {
+      "id": "faq-15",
+      "category": "connections",
+      "question": "How do the properties of logarithms in EL5 make solving equations possible in EL6?",
+      "answer": "EL5's properties are the actual tools EL6 puts to work. The power property is what lets you bring a trapped exponent down to solve for it. The product and quotient properties are what let you condense a multi-term logarithmic equation into the single \\( \\log_b(\\text{something}) = \\text{number} \\) form you need before converting to exponential form and solving. Without EL5's toolkit, none of EL6's equation-solving methods would be possible."
+    },
+    {
+      "id": "faq-16",
+      "category": "connections",
+      "question": "How does this section connect back to EL1–EL4?",
+      "answer": "Every piece of this section leans on something earlier in the unit. EL1 and EL3 gave you the exponential and logarithmic definitions these properties are built from. EL2 and EL4's domain and asymptote rules are exactly why you have to check for extraneous solutions (faq-13) — a candidate solution isn't valid unless it actually lands inside the function's domain. This section is less a brand-new topic and more the payoff of everything the unit has been building toward."
+    },
+    {
+      "id": "faq-17",
+      "category": "connections",
+      "question": "Why do these equation-solving skills matter beyond this course?",
+      "answer": "Solving exponential and logarithmic equations is the essential skill behind answering real questions like \"how long until this investment doubles,\" \"how long until this radioactive sample decays to half its original amount,\" or \"how many years until a population reaches a certain size.\" Anywhere a real-world exponential model shows up, eventually you need to solve for the input — and that's exactly the skill this section builds."
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid-1",
+      "title": "Expand Logarithmic Expressions (Ex 1)",
+      "url": "https://www.youtube.com/watch?v=X_y9kQr7NRU",
+      "description": "Using the properties of logarithms to expand a logarithmic expression as much as possible.",
+      "category": "properties-expand-condense",
+      "relatedFaqs": [
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-7"
+      ]
+    },
+    {
+      "id": "vid-2",
+      "title": "Expand a Logarithm Containing a Radical",
+      "url": "https://youtu.be/QMxrT-CWaTQ",
+      "description": "Expanding a logarithmic expression that contains a radical, using the power property to handle the fractional exponent.",
+      "category": "properties-expand-condense",
+      "relatedFaqs": [
+        "faq-4",
+        "faq-7"
+      ]
+    },
+    {
+      "id": "vid-3",
+      "title": "Solve an Exponential Equation Using Logarithms",
+      "url": "https://youtu.be/zJjBuKoywXc",
+      "description": "Solving an exponential equation by taking the logarithm of both sides and using the power property to isolate the variable.",
+      "category": "solving-equations",
+      "relatedFaqs": [
+        "faq-11"
+      ]
+    },
+    {
+      "id": "vid-4",
+      "title": "Solve an Exponential Equation with Logarithms — Variable on Both Sides",
+      "url": "https://youtu.be/wRI6CMYjxPc",
+      "description": "Solving an exponential equation where the variable appears in exponents on both sides of the equation.",
+      "category": "solving-equations",
+      "relatedFaqs": [
+        "faq-10",
+        "faq-11"
+      ]
+    },
+    {
+      "id": "vid-5",
+      "title": "Solve a Basic Exponential Equation with Base Ten Using the Logarithm Definition",
+      "url": "https://www.youtube.com/watch?v=eDDAqsiLNyE",
+      "description": "Solving an exponential equation by rewriting it in logarithmic form using the definition from EL3.",
+      "category": "solving-equations",
+      "relatedFaqs": [
+        "faq-11"
+      ]
+    },
+    {
+      "id": "vid-6",
+      "title": "Solve a Basic Exponential Equation with Base e Using the Logarithm Definition",
+      "url": "https://www.youtube.com/watch?v=-RMmLUHAlj0",
+      "description": "Solving a base-e exponential equation using the natural logarithm and the log/exponential definition.",
+      "category": "solving-equations",
+      "relatedFaqs": [
+        "faq-11"
+      ]
+    },
+    {
+      "id": "vid-7",
+      "title": "Solve a Basic Logarithmic Equation by Writing It in Exponential Form",
+      "url": "https://www.youtube.com/watch?v=rDg4R9treO4",
+      "description": "Solving a logarithmic equation by converting it to exponential form and solving algebraically.",
+      "category": "solving-equations",
+      "relatedFaqs": [
+        "faq-12",
+        "faq-13"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "id": "app-1",
+      "title": "Log Rules",
+      "url": "https://logrules.netlify.app/",
+      "description": "Practice with the product, quotient, and power properties of logarithms — directly applicable to expanding and condensing logarithmic expressions.",
+      "relatedFaqs": [
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-7",
+        "faq-8"
+      ]
+    }
+  ],
+  "prompts": {
+    "guided": [
+      {
+        "id": "prompt-1",
+        "title": "Practice Expanding Logarithmic Expressions",
+        "prompt": "I'm learning to expand logarithmic expressions using the product, quotient, and power properties. Give me an expression with a product, a quotient, and an exponent all combined, and walk me through expanding it fully, one property at a time. Then give me more practice problems of increasing difficulty and check my work."
+      },
+      {
+        "id": "prompt-2",
+        "title": "Practice Condensing Logarithmic Expressions",
+        "prompt": "I'm learning to condense multiple logarithms into a single logarithm. Give me an expression with a coefficient in front of at least one log term, and walk me through handling the power property first, then combining everything using product and quotient. Give me more practice and check my work."
+      },
+      {
+        "id": "prompt-3",
+        "title": "Practice Solving Exponential Equations Both Ways",
+        "prompt": "I'm learning to solve exponential equations. Give me one equation where both sides can be rewritten with the same base, and walk me through solving it using the one-to-one property. Then give me an equation where the bases genuinely can't be matched, and walk me through solving it by taking the log of both sides instead."
+      },
+      {
+        "id": "prompt-4",
+        "title": "Practice Checking for Extraneous Solutions",
+        "prompt": "I'm learning to solve logarithmic equations and check for extraneous solutions. Give me a logarithmic equation that, when solved, produces two candidate solutions — one valid and one extraneous. Walk me through solving it, then show me how to check both candidates against the original equation's domain to identify which one must be rejected."
+      },
+      {
+        "id": "prompt-5",
+        "title": "Connect Log Properties to Equation Solving",
+        "prompt": "I've learned the properties of logarithms in EL5, and now I'm using them to solve equations in EL6. Can you help me see the connection clearly — pick one equation and show me exactly which EL5 property I need at each step, and why that property is the right tool for that particular step?"
+      }
+    ],
+    "open": [
+      {
+        "id": "open-1",
+        "title": "Create Your Own",
+        "prompt": "Use the AI tool of your choice. Start by describing what you're confused about or curious about from Sections EL5 (Properties of Logarithms) or EL6 (Solving Exponential and Logarithmic Equations). Ask the AI to help you explore that idea. Share what you learned and what surprised you."
+      }
+    ]
+  }
+}
