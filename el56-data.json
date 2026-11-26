@@ -52,6 +52,12 @@
       "answer": "Run the expanding process in reverse: handle any coefficients in front of a logarithm first by moving them back up as exponents (power property backward), then combine addition into a product and subtraction into a quotient.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Condense \\( 2\\log(x) + \\log(y) - \\log(z) \\).</p><p class=\"math-line\">Power property backward: \\( \\log(x^2) + \\log(y) - \\log(z) \\)</p><p class=\"math-line\">Product then quotient: \\( \\log\\left(\\dfrac{x^2y}{z}\\right) \\)</p></div>"
     },
     {
+      "id": "faq-18",
+      "category": "sticking-points",
+      "question": "How do I solve the kinds of equations CheckIt gives me in EL6?",
+      "answer": "Get the power or the logarithm alone first, then switch forms (EL3): \\( \\log_b x=y \\) means \\( b^{y}=x \\). For \\( b^{x-a}=c \\), the power is already alone, so switch right away: \\( x-a=\\log_b c \\), so \\( x=\\log_b(c)+a \\). For \\( b^{x}-a=c \\), add \\( a \\) first: \\( b^x=c+a \\), so \\( x=\\log_b(c+a) \\). For \\( a\\log_b(cx)=ad \\), divide by \\( a \\), switch to \\( cx=b^d \\), and divide by \\( c \\). For \\( a+\\log_b(cx)=a+d \\), subtract \\( a \\) first, then do the same. Leave answers exact, like \\( \\log_5(3)+4 \\) or \\( \\tfrac{16}{9} \\); check that each log's input is positive.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Solve \\( 5^{x-4}=3 \\): the power is alone, so \\( x-4=\\log_5 3 \\) and \\( x=\\log_5(3)+4 \\).</p><p class=\"math-line\">Solve \\( 5^{x}-4=3 \\): add 4 first, \\( 5^x=7 \\), so \\( x=\\log_5(7) \\).</p><p class=\"math-line\">Solve \\( 6\\log_4(9x)=12 \\): divide by 6, \\( \\log_4(9x)=2 \\), so \\( 9x=4^2=16 \\) and \\( x=\\tfrac{16}{9} \\).</p><p class=\"math-line\">Solve \\( 6+\\log_4(9x)=9 \\): subtract 6, \\( \\log_4(9x)=3 \\), so \\( 9x=4^3=64 \\) and \\( x=\\tfrac{64}{9} \\).</p></div>"
+    },
+    {
       "id": "faq-9",
       "category": "sticking-points",
       "question": "How do I solve an exponential equation when both sides already have the same base?",
@@ -107,6 +113,31 @@
     }
   ],
   "videos": [
+    {
+      "id": "vid-0-el5",
+      "title": "EL5 video walkthrough: Properties of Logarithms",
+      "url": "https://youtu.be/vDpBqe9nrJ4",
+      "description": "Dr. Romero's narrated walkthrough of expanding and condensing logarithmic expressions with the product, quotient, and power properties, as in the EL5 CheckIt exercise.",
+      "category": "properties-expand-condense",
+      "relatedFaqs": [
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-7",
+        "faq-8"
+      ]
+    },
+    {
+      "id": "vid-0-el6",
+      "title": "EL6 video walkthrough: Solving Exponential and Logarithmic Equations",
+      "url": "https://youtu.be/LobEpGuB31M",
+      "description": "Dr. Romero's narrated walkthrough of solving the EL6 CheckIt equations: undo what is outside first, switch forms, then leave the answer exact.",
+      "category": "solving-equations",
+      "relatedFaqs": [
+        "faq-18",
+        "faq-13"
+      ]
+    },
     {
       "id": "vid-1",
       "title": "Expand Logarithmic Expressions (Ex 1)",
@@ -220,11 +251,6 @@
         "id": "prompt-4",
         "title": "Extension: Checking for Extraneous Solutions (beyond the EL6 CheckIt exercise)",
         "prompt": "This is an extension beyond my EL6 CheckIt exercise. I'm learning to solve log equations with two logs and to check for extraneous solutions. Give me an equation of the form log_b(x) + log_b(x + k) = n, where b is a whole number greater than 1 and k and n are positive whole numbers, chosen so that x(x + k) = b^n factors into two integer solutions, one positive and one negative. For example, log_2(x) + log_2(x - 2) = 3 is the same idea, but use a plus sign and different numbers. Don't solve it yet. I'll condense it, switch forms, solve the quadratic, and test each candidate in the ORIGINAL equation. Then show your solution, but make exactly one deliberate mistake: keep the negative candidate as a valid answer. Don't point it out. I'll find it by substituting into the original logs and saying which input becomes negative. After I respond, check my reasoning and give me the fully corrected solution before we finish."
-      },
-      {
-        "id": "prompt-5",
-        "title": "Extension: Where EL5's Properties Show Up in EL6",
-        "prompt": "This is an extension beyond my EL5 and EL6 CheckIt exercises. Give me two log equations. The first should be CheckIt-style: a log_b(cx) = ad, where b is a whole number from 2 to 5, a and c are different whole numbers from 2 to 9, and d is 2 or 3. The second should be log_b(x) + log_b(x + k) = n, with b a whole number greater than 1 and k and n positive whole numbers, chosen so that x(x + k) = b^n has two integer solutions, one positive and one negative. Before solving, tell me which EL5 property (product, quotient or power rule), if any, each equation needs, and why. Make exactly one deliberate mistake in what you claim: say that the second equation is condensed with the quotient rule. I'll check your claims against my class notes, say which equation needs no EL5 property at all, and correct the wrong claim. Then I'll solve both. After I respond, check my reasoning and give me the fully corrected solution before we finish."
       }
     ],
     "open": [
@@ -240,7 +266,7 @@
       "id": "EL5",
       "label": "EL5: Properties of Logarithms",
       "sectionLabel": "EL5, Properties of Logarithms",
-      "intro": "Builds to the EL5 check: expanding and condensing logarithmic expressions while naming each property, plus common mistakes and change of base from your notes. As in CheckIt, every variable stands for a positive number unless stated otherwise. Practice scope: the EL5 CheckIt exercise asks you to expand one logarithm and condense one expression, naming the property at each step; change of base and the square-root items are extensions.",
+      "intro": "Builds to the EL5 check: expanding and condensing logarithmic expressions while naming each property, plus common mistakes. Change of base is an optional extension at the end. As in CheckIt, every variable stands for a positive number unless stated otherwise. Practice scope: the EL5 CheckIt exercise asks you to expand one logarithm and condense one expression, naming the property at each step; change of base and the square-root items are extensions.",
       "graphs": {
         "EX1": "<div class=\"table-wrap\" tabindex=\"0\" role=\"region\" aria-label=\"Scrollable table: expanding log base 9 of k squared n to the 6th over t cubed\"><table class=\"lookup steps\"><tr><th scope=\"col\">Step</th><th scope=\"col\">Expression</th><th scope=\"col\">Property used</th></tr><tr><td>0</td><td>\\(\\log_9\\left(\\dfrac{k^2 n^6}{t^3}\\right)\\)</td><td><span class=\"pr-badge pr-start\">Start</span> </td></tr><tr><td>1</td><td>\\(\\log_9(k^2 n^6) - \\log_9(t^3)\\)</td><td><span class=\"pr-badge pr-quot\">Quotient rule</span> a division inside becomes subtraction</td></tr><tr><td>2</td><td>\\(\\log_9(k^2) + \\log_9(n^6) - \\log_9(t^3)\\)</td><td><span class=\"pr-badge pr-prod\">Product rule</span> a product inside becomes addition</td></tr><tr><td>3</td><td>\\(2\\log_9 k + 6\\log_9 n - 3\\log_9 t\\)</td><td><span class=\"pr-badge pr-pow\">Power rule</span> each exponent moves to the front</td></tr></table></div>",
         "EX2": "<div class=\"table-wrap\" tabindex=\"0\" role=\"region\" aria-label=\"Scrollable table: expanding log base 5 of s to the 4th over m squared y to the 7th\"><table class=\"lookup steps\"><tr><th scope=\"col\">Step</th><th scope=\"col\">Expression</th><th scope=\"col\">Property used</th></tr><tr><td>0</td><td>\\(\\log_5\\left(\\dfrac{s^4}{m^2 y^7}\\right)\\)</td><td><span class=\"pr-badge pr-start\">Start</span> </td></tr><tr><td>1</td><td>\\(\\log_5(s^4) - \\log_5(m^2 y^7)\\)</td><td><span class=\"pr-badge pr-quot\">Quotient rule</span> a division inside becomes subtraction</td></tr><tr><td>2</td><td>\\(\\log_5(s^4) - \\big(\\log_5(m^2) + \\log_5(y^7)\\big) = \\log_5(s^4) - \\log_5(m^2) - \\log_5(y^7)\\)</td><td><span class=\"pr-badge pr-prod\">Product rule</span> split the denominator's product, then distribute the minus sign</td></tr><tr><td>3</td><td>\\(4\\log_5 s - 2\\log_5 m - 7\\log_5 y\\)</td><td><span class=\"pr-badge pr-pow\">Power rule</span> each exponent moves to the front</td></tr></table></div>",
@@ -299,7 +325,7 @@
         },
         {
           "stage": "Learn the skills",
-          "desc": "The three properties and where they come from, then expanding and condensing (the EL5 check), common mistakes, and change of base.",
+          "desc": "The three properties and where they come from, then expanding and condensing (the EL5 check) and common mistakes.",
           "stops": [
             {
               "id": "el5-t1",
@@ -436,10 +462,48 @@
                   "tab": "tab-videos"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "stage": "Put it together",
+          "desc": "A practice check in the EL5 CheckIt format: expand and condense, naming each property.",
+          "stops": [
+            {
+              "id": "el5-f1",
+              "title": "Practice check",
+              "target": "Expand and condense logarithmic expressions step by step, naming each property.",
+              "cold": "(1) Demonstrate step-by-step how to <em>expand</em> \\(\\log_7\\left(\\dfrac{m^4 s^2}{w^3}\\right)\\), explaining the logarithm property you are using each step.<br>(2) Demonstrate step-by-step how to <em>condense</em> \\(5\\log_2 k - 7\\log_2 t + 6\\log_2 n\\), explaining the logarithm property you are using each step.",
+              "coldPlain": "(1) Expand log_7( m^4 s^2 / w^3 ) step by step, naming each property. (2) Condense 5 log_2 k - 7 log_2 t + 6 log_2 n step by step, naming each property.",
+              "note": "Show every step and name the log property (product, quotient, or power rule) you used at each step. Check that I named the right property each time.",
+              "coldA": "(1) \\(4\\log_7 m + 2\\log_7 s - 3\\log_7 w\\)[[graph:F1a]](2) \\(\\log_2\\left(\\dfrac{k^5 n^6}{t^7}\\right)\\)[[graph:F1b]]",
+              "solution": "(1) Quotient rule: log_7(m^4 s^2) - log_7(w^3); product rule: log_7(m^4) + log_7(s^2) - log_7(w^3); power rule: 4 log_7 m + 2 log_7 s - 3 log_7 w. (2) Power rule backward: log_2(k^5) - log_2(t^7) + log_2(n^6); product rule: log_2(k^5 n^6) - log_2(t^7); quotient rule: log_2(k^5 n^6 / t^7).",
+              "mistake": "Not naming the property at each step; the check asks for it.",
+              "again": "(1) Expand \\(\\log_8\\left(\\dfrac{x^5}{a^2 d^6}\\right)\\), naming each property.<br>(2) Condense \\(-3\\log_6 y + 7\\log_6 z - 4\\log_6 b\\), naming each property.",
+              "againA": "(1) \\(5\\log_8 x - 2\\log_8 a - 6\\log_8 d\\)[[graph:F2a]](2) \\(\\log_6\\left(\\dfrac{z^7}{y^3 b^4}\\right)\\)[[graph:F2b]]",
+              "reflect": "Which direction (expanding or condensing) is harder for you, and which property trips you up?",
+              "related": [
+                {
+                  "label": "FAQs",
+                  "tab": "tab-faq"
+                },
+                {
+                  "label": "AI Prompts",
+                  "tab": "tab-prompts"
+                }
+              ],
+              "stretch": "Two CheckIt edge cases. (1) Expand \\(\\log_3\\left(\\dfrac{1}{a^2 k^5 w^3}\\right)\\), naming each property. (2) Condense \\(-4\\log_2 x - 6\\log_2 y - 2\\log_2 z\\).",
+              "stretchA": "(1) Quotient rule: \\(\\log_3 1 - \\log_3(a^2 k^5 w^3)\\), and \\(\\log_3 1 = 0\\). Product rule, then power rule: \\(-2\\log_3 a - 5\\log_3 k - 3\\log_3 w\\). (2) Power rule: \\(\\log_2(x^{-4}) + \\log_2(y^{-6}) + \\log_2(z^{-2})\\). Product rule: \\(\\log_2(x^{-4}y^{-6}z^{-2}) = \\log_2\\left(\\dfrac{1}{x^4 y^6 z^2}\\right)\\)."
+            }
+          ]
+        },
+        {
+          "stage": "Beyond CheckIt",
+          "desc": "Optional extension, beyond the EL5 CheckIt exercise: change of base, to evaluate any log on a calculator.",
+          "stops": [
             {
               "id": "el5-t6",
-              "title": "Change of base (extension, beyond the EL5 CheckIt exercise)",
+              "title": "Change of base (Extension, beyond the EL5 CheckIt exercise)",
               "target": "\\(\\log_b a = \\dfrac{\\ln a}{\\ln b} = \\dfrac{\\log a}{\\log b}\\). Use it to evaluate any log on a calculator.",
               "explain": "<h4>Why change of base works</h4><p>Let \\(c = \\log_3 20\\). That means \\(3^c = 20\\). Take \\(\\ln\\) of both sides: \\(\\ln(3^c) = \\ln 20\\). The power rule gives \\(c \\ln 3 = \\ln 20\\), so \\(c = \\dfrac{\\ln 20}{\\ln 3}\\). The same steps work for any base.</p>",
               "cold": "Use change of base to evaluate \\(\\log_3 20\\) to four decimal places.",
@@ -464,36 +528,6 @@
                 {
                   "label": "Apps",
                   "tab": "tab-apps"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "stage": "Put it together",
-          "desc": "A practice check in the EL5 CheckIt format (expand and condense, naming each property), plus change of base.",
-          "stops": [
-            {
-              "id": "el5-f1",
-              "title": "Practice check",
-              "target": "Expand and condense logarithmic expressions step by step, naming each property, and use change of base.",
-              "cold": "(1) Demonstrate step-by-step how to <em>expand</em> \\(\\log_7\\left(\\dfrac{m^4 s^2}{w^3}\\right)\\), explaining the logarithm property you are using each step.<br>(2) Demonstrate step-by-step how to <em>condense</em> \\(5\\log_2 k - 7\\log_2 t + 6\\log_2 n\\), explaining the logarithm property you are using each step.<br>(3) Extension, beyond the EL5 CheckIt exercise: evaluate \\(\\log_4 30\\) to four decimal places.",
-              "coldPlain": "(1) Expand log_7( m^4 s^2 / w^3 ) step by step, naming each property. (2) Condense 5 log_2 k - 7 log_2 t + 6 log_2 n step by step, naming each property. (3) Extension: evaluate log_4 30 to four decimal places.",
-              "note": "Show every step and name the log property (product, quotient, or power rule) you used at each step. Check that I named the right property each time.",
-              "coldA": "(1) \\(4\\log_7 m + 2\\log_7 s - 3\\log_7 w\\)[[graph:F1a]](2) \\(\\log_2\\left(\\dfrac{k^5 n^6}{t^7}\\right)\\)[[graph:F1b]](3) \\(\\dfrac{\\ln 30}{\\ln 4} \\approx 2.4534\\)",
-              "solution": "(1) Quotient rule: log_7(m^4 s^2) - log_7(w^3); product rule: log_7(m^4) + log_7(s^2) - log_7(w^3); power rule: 4 log_7 m + 2 log_7 s - 3 log_7 w. (2) Power rule backward: log_2(k^5) - log_2(t^7) + log_2(n^6); product rule: log_2(k^5 n^6) - log_2(t^7); quotient rule: log_2(k^5 n^6 / t^7). (3) ln 30 / ln 4 is about 2.4534 (between 2 and 3, since 4^2 = 16 and 4^3 = 64).",
-              "mistake": "Not naming the property at each step; the check asks for it.",
-              "again": "(1) Expand \\(\\log_8\\left(\\dfrac{x^5}{a^2 d^6}\\right)\\), naming each property.<br>(2) Condense \\(-3\\log_6 y + 7\\log_6 z - 4\\log_6 b\\), naming each property.<br>(3) Extension, beyond the EL5 CheckIt exercise: evaluate \\(\\log_9 2\\) to four decimal places.",
-              "againA": "(1) \\(5\\log_8 x - 2\\log_8 a - 6\\log_8 d\\)[[graph:F2a]](2) \\(\\log_6\\left(\\dfrac{z^7}{y^3 b^4}\\right)\\)[[graph:F2b]](3) \\(\\dfrac{\\ln 2}{\\ln 9} \\approx 0.3155\\) (less than 1, since 2 is less than 9)",
-              "reflect": "Which direction (expanding or condensing) is harder for you, and which property trips you up?",
-              "related": [
-                {
-                  "label": "FAQs",
-                  "tab": "tab-faq"
-                },
-                {
-                  "label": "AI Prompts",
-                  "tab": "tab-prompts"
                 }
               ]
             }
@@ -564,35 +598,12 @@
         },
         {
           "stage": "Learn the skills",
-          "desc": "Exponential equations first, then log equations. The big habit: isolate the power or the log, then convert.",
+          "desc": "The two CheckIt kinds of equations: exponential first, then logarithmic. The big habit: isolate the power or the log, then convert.",
           "stops": [
-            {
-              "id": "el6-t1",
-              "title": "Same base on both sides (extension, beyond the EL6 CheckIt exercise)",
-              "target": "If both sides can be written as powers of the same base \\(b\\) (with \\(b > 0\\), \\(b \\ne 1\\)), set the exponents equal: \\(b^m = b^n\\) means \\(m = n\\).",
-              "cold": "Solve \\(2^{x + 1} = 8\\) and \\(9^x = 27\\).",
-              "coldPlain": "Solve 2^(x + 1) = 8 and 9^x = 27.",
-              "coldA": "\\(2^{x + 1} = 2^3\\), so \\(x + 1 = 3\\) and \\(x = 2\\). \\(9^x = (3^2)^x = 3^{2x}\\) and \\(27 = 3^3\\), so \\(2x = 3\\) and \\(x = \\tfrac{3}{2}\\).",
-              "solution": "Write 8 as 2^3, then match exponents: x + 1 = 3, x = 2. For 9^x = 27, rewrite both with base 3: 3^(2x) = 3^3, so 2x = 3 and x = 3/2.",
-              "mistake": "Dividing 27 by 9 or setting x = 27/9.",
-              "again": "Solve \\(5^{2x - 1} = 125\\) and \\(4^x = \\tfrac{1}{8}\\).",
-              "againA": "\\(2x - 1 = 3\\), so \\(x = 2\\). \\(2^{2x} = 2^{-3}\\), so \\(x = -\\tfrac{3}{2}\\).",
-              "reflect": "When does the same-base method not work?",
-              "related": [
-                {
-                  "label": "FAQs",
-                  "tab": "tab-faq"
-                },
-                {
-                  "label": "Videos",
-                  "tab": "tab-videos"
-                }
-              ]
-            },
             {
               "id": "el6-t2",
               "title": "Exponential equations: isolate, then convert",
-              "target": "When the bases cannot match, get the power alone, then rewrite in log form. Give the exact answer as a log, then a decimal with change of base. CheckIt wants only the exact answer; the decimal is a check.",
+              "target": "Get the power alone, then rewrite in log form. Give the exact answer as a log, then a decimal with change of base. CheckIt wants only the exact answer; the decimal is a check.",
               "cold": "Solve \\(3^{x - 6} = 2\\) and \\(3^x - 6 = 2\\). Give exact answers, then decimals to check them.",
               "coldPlain": "Solve 3^(x - 6) = 2 and 3^x - 6 = 2. Give exact answers, then decimals to check them.",
               "coldA": "[[graph:S1]]The graph shows the same answer: the curve \\(y = 3^{x-6}\\) meets the line \\(y = 2\\) at \\(x \\approx 6.63\\).[[graph:I1]][[graph:S2]]",
@@ -601,31 +612,6 @@
               "again": "Solve \\(5^{y - 2} = 6\\) and \\(5^m - 2 = 6\\).",
               "againA": "\\(y = \\log_5 6 + 2 \\approx 3.1133\\). \\(5^m = 8\\), so \\(m = \\log_5 8 \\approx 1.2920\\).",
               "reflect": "Why must the power be alone before you convert?",
-              "related": [
-                {
-                  "label": "FAQs",
-                  "tab": "tab-faq"
-                },
-                {
-                  "label": "Videos",
-                  "tab": "tab-videos"
-                }
-              ]
-            },
-            {
-              "id": "el6-t3",
-              "title": "Take ln of both sides (extension, beyond the EL6 CheckIt exercise)",
-              "target": "Another route: take \\(\\ln\\) of both sides and use the power rule to bring the exponent down. This is the go-to move for base \\(e\\) and for different bases on each side.",
-              "cold": "Solve \\(3^x = 20\\) and \\(e^{2x} = 9\\).",
-              "coldPlain": "Solve 3^x = 20 and e^(2x) = 9.",
-              "coldA": "\\(x\\ln 3 = \\ln 20\\), so \\(x = \\dfrac{\\ln 20}{\\ln 3} \\approx 2.7268\\). \\(2x = \\ln 9\\), so \\(x = \\dfrac{\\ln 9}{2} = \\ln 3 \\approx 1.0986\\).",
-              "solution": "ln(3^x) = ln 20 becomes x ln 3 = ln 20 by the power rule, so x = ln 20 / ln 3 (the same as log_3 20). For e^(2x) = 9: ln(e^(2x)) = 2x, so 2x = ln 9 and x = ln 9 / 2.",
-              "mistake": "Writing ln(3^x) as (ln 3)^x.",
-              "again": "Solve \\(6e^{0.5t} = 30\\).",
-              "againA": "Isolate: \\(e^{0.5t} = 5\\). Then \\(0.5t = \\ln 5\\), so \\(t = 2\\ln 5 \\approx 3.2189\\).",
-              "stretch": "Solve \\(2^x = 3^{x - 1}\\).",
-              "stretchA": "\\(x\\ln 2 = (x - 1)\\ln 3\\). Collect \\(x\\): \\(x(\\ln 2 - \\ln 3) = -\\ln 3\\), so \\(x = \\dfrac{\\ln 3}{\\ln 3 - \\ln 2} \\approx 2.7095\\).",
-              "reflect": "How is taking ln of both sides the same as using change of base?",
               "related": [
                 {
                   "label": "FAQs",
@@ -649,31 +635,6 @@
               "again": "Solve \\(6\\log_5(4k) = 18\\) and \\(6 + \\log_5(4z) = 8\\).",
               "againA": "\\(\\log_5(4k) = 3\\), \\(4k = 125\\), \\(k = \\tfrac{125}{4}\\). \\(\\log_5(4z) = 2\\), \\(4z = 25\\), \\(z = \\tfrac{25}{4}\\).",
               "reflect": "What is the same about the first move in exponential and log equations?",
-              "related": [
-                {
-                  "label": "FAQs",
-                  "tab": "tab-faq"
-                },
-                {
-                  "label": "Videos",
-                  "tab": "tab-videos"
-                }
-              ]
-            },
-            {
-              "id": "el6-t5",
-              "title": "Combine logs and check for extraneous solutions (extension, beyond the EL6 CheckIt exercise)",
-              "target": "With more than one log, condense first (EL5), convert, solve, and then <strong>check every answer</strong>: any answer that puts a non-positive number inside a log is extraneous.",
-              "cold": "Solve \\(\\log_2 x + \\log_2(x - 2) = 3\\).",
-              "coldPlain": "Solve log_2 x + log_2(x - 2) = 3.",
-              "coldA": "Only \\(x = 4\\) works.[[graph:S5]]The graph agrees: the left side exists only for \\(x > 2\\) and keeps increasing there, so it crosses \\(y = 3\\) exactly once, at \\(x = 4\\). The value \\(x = -2\\) is not even in its domain.[[graph:I5]]",
-              "solution": "Condense: log_2(x(x - 2)) = 3. Convert: x(x - 2) = 8, so x^2 - 2x - 8 = 0, (x - 4)(x + 2) = 0. x = -2 makes log_2(-2) undefined, so reject it. x = 4: log_2 4 + log_2 2 = 3, correct.",
-              "mistake": "Keeping both answers without checking the domain.",
-              "again": "Solve \\(\\log x + \\log(x + 21) = 2\\).",
-              "againA": "\\(x(x + 21) = 100\\), so \\(x^2 + 21x - 100 = 0\\), \\((x + 25)(x - 4) = 0\\). Reject \\(x = -25\\). Answer: \\(x = 4\\).",
-              "stretch": "Solve \\(\\ln(x + 1) - \\ln(x - 1) = \\ln 3\\).",
-              "stretchA": "\\(\\dfrac{x + 1}{x - 1} = 3\\), so \\(x + 1 = 3x - 3\\) and \\(x = 2\\). Check: \\(\\ln 3 - \\ln 1 = \\ln 3\\) ✓.",
-              "reflect": "Why can solving correctly still produce an answer that does not work?",
               "related": [
                 {
                   "label": "FAQs",
@@ -711,6 +672,85 @@
                 {
                   "label": "AI Prompts",
                   "tab": "tab-prompts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "stage": "Beyond CheckIt",
+          "desc": "Optional extensions, beyond the EL6 CheckIt exercise: same-base equations, taking ln of both sides, and equations with several logs (check for extraneous solutions).",
+          "stops": [
+            {
+              "id": "el6-t1",
+              "title": "Same base on both sides (extension, beyond the EL6 CheckIt exercise)",
+              "target": "If both sides can be written as powers of the same base \\(b\\) (with \\(b > 0\\), \\(b \\ne 1\\)), set the exponents equal: \\(b^m = b^n\\) means \\(m = n\\).",
+              "cold": "Solve \\(2^{x + 1} = 8\\) and \\(9^x = 27\\).",
+              "coldPlain": "Solve 2^(x + 1) = 8 and 9^x = 27.",
+              "coldA": "\\(2^{x + 1} = 2^3\\), so \\(x + 1 = 3\\) and \\(x = 2\\). \\(9^x = (3^2)^x = 3^{2x}\\) and \\(27 = 3^3\\), so \\(2x = 3\\) and \\(x = \\tfrac{3}{2}\\).",
+              "solution": "Write 8 as 2^3, then match exponents: x + 1 = 3, x = 2. For 9^x = 27, rewrite both with base 3: 3^(2x) = 3^3, so 2x = 3 and x = 3/2.",
+              "mistake": "Dividing 27 by 9 or setting x = 27/9.",
+              "again": "Solve \\(5^{2x - 1} = 125\\) and \\(4^x = \\tfrac{1}{8}\\).",
+              "againA": "\\(2x - 1 = 3\\), so \\(x = 2\\). \\(2^{2x} = 2^{-3}\\), so \\(x = -\\tfrac{3}{2}\\).",
+              "reflect": "When does the same-base method not work?",
+              "related": [
+                {
+                  "label": "FAQs",
+                  "tab": "tab-faq"
+                },
+                {
+                  "label": "Videos",
+                  "tab": "tab-videos"
+                }
+              ]
+            },
+            {
+              "id": "el6-t3",
+              "title": "Take ln of both sides (extension, beyond the EL6 CheckIt exercise)",
+              "target": "Another route: take \\(\\ln\\) of both sides and use the power rule to bring the exponent down. This is the go-to move for base \\(e\\) and for different bases on each side.",
+              "cold": "Solve \\(3^x = 20\\) and \\(e^{2x} = 9\\).",
+              "coldPlain": "Solve 3^x = 20 and e^(2x) = 9.",
+              "coldA": "\\(x\\ln 3 = \\ln 20\\), so \\(x = \\dfrac{\\ln 20}{\\ln 3} \\approx 2.7268\\). \\(2x = \\ln 9\\), so \\(x = \\dfrac{\\ln 9}{2} = \\ln 3 \\approx 1.0986\\).",
+              "solution": "ln(3^x) = ln 20 becomes x ln 3 = ln 20 by the power rule, so x = ln 20 / ln 3 (the same as log_3 20). For e^(2x) = 9: ln(e^(2x)) = 2x, so 2x = ln 9 and x = ln 9 / 2.",
+              "mistake": "Writing ln(3^x) as (ln 3)^x.",
+              "again": "Solve \\(6e^{0.5t} = 30\\).",
+              "againA": "Isolate: \\(e^{0.5t} = 5\\). Then \\(0.5t = \\ln 5\\), so \\(t = 2\\ln 5 \\approx 3.2189\\).",
+              "stretch": "Solve \\(2^x = 3^{x - 1}\\).",
+              "stretchA": "\\(x\\ln 2 = (x - 1)\\ln 3\\). Collect \\(x\\): \\(x(\\ln 2 - \\ln 3) = -\\ln 3\\), so \\(x = \\dfrac{\\ln 3}{\\ln 3 - \\ln 2} \\approx 2.7095\\).",
+              "reflect": "How is taking ln of both sides the same as using change of base?",
+              "related": [
+                {
+                  "label": "FAQs",
+                  "tab": "tab-faq"
+                },
+                {
+                  "label": "Videos",
+                  "tab": "tab-videos"
+                }
+              ]
+            },
+            {
+              "id": "el6-t5",
+              "title": "Combine logs and check for extraneous solutions (extension, beyond the EL6 CheckIt exercise)",
+              "target": "With more than one log, condense first (EL5), convert, solve, and then <strong>check every answer</strong>: any answer that puts a non-positive number inside a log is extraneous.",
+              "cold": "Solve \\(\\log_2 x + \\log_2(x - 2) = 3\\).",
+              "coldPlain": "Solve log_2 x + log_2(x - 2) = 3.",
+              "coldA": "Only \\(x = 4\\) works.[[graph:S5]]The graph agrees: the left side exists only for \\(x > 2\\) and keeps increasing there, so it crosses \\(y = 3\\) exactly once, at \\(x = 4\\). The value \\(x = -2\\) is not even in its domain.[[graph:I5]]",
+              "solution": "Condense: log_2(x(x - 2)) = 3. Convert: x(x - 2) = 8, so x^2 - 2x - 8 = 0, (x - 4)(x + 2) = 0. x = -2 makes log_2(-2) undefined, so reject it. x = 4: log_2 4 + log_2 2 = 3, correct.",
+              "mistake": "Keeping both answers without checking the domain.",
+              "again": "Solve \\(\\log x + \\log(x + 21) = 2\\).",
+              "againA": "\\(x(x + 21) = 100\\), so \\(x^2 + 21x - 100 = 0\\), \\((x + 25)(x - 4) = 0\\). Reject \\(x = -25\\). Answer: \\(x = 4\\).",
+              "stretch": "Solve \\(\\ln(x + 1) - \\ln(x - 1) = \\ln 3\\).",
+              "stretchA": "\\(\\dfrac{x + 1}{x - 1} = 3\\), so \\(x + 1 = 3x - 3\\) and \\(x = 2\\). Check: \\(\\ln 3 - \\ln 1 = \\ln 3\\) ✓.",
+              "reflect": "Why can solving correctly still produce an answer that does not work?",
+              "related": [
+                {
+                  "label": "FAQs",
+                  "tab": "tab-faq"
+                },
+                {
+                  "label": "Videos",
+                  "tab": "tab-videos"
                 }
               ]
             }
